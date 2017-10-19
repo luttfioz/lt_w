@@ -6,6 +6,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.io.IOException;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.http.HttpStatus;
@@ -21,11 +22,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class HomeControllerWebIntegrationTests {
 
+	@Ignore
 	@Test
 	public void testListAll() throws JsonProcessingException, IOException {
 		RestTemplate restTemplate = new RestTemplate();
 		
-		ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8080/api/v1/name", String.class);
+		ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8443/api/v1/name", String.class);
 		
 		assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
 		
