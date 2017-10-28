@@ -1,4 +1,4 @@
-package com.lt.web.controller;
+package com.lt.web.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -12,8 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Example;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.lt.web.dao.CustomerRepository;
 import com.lt.web.domain.Customer;
+import com.lt.web.domain.CustomerRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

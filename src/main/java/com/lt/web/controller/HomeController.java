@@ -14,7 +14,6 @@ public class HomeController {
 	
 	@GetMapping("names")
 	public List<String> list(){
-		
 		return new ArrayList<String>(Arrays.asList("ASD","ASDASD"));
 	}
 	

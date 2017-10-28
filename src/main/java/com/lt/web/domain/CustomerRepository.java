@@ -1,10 +1,8 @@
-package com.lt.web.dao;
+package com.lt.web.domain;
 
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-
-import com.lt.web.domain.Customer;
 
 public interface CustomerRepository extends MongoRepository<Customer, String> {
 

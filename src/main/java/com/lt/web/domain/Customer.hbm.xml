@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 21, 2017 12:42:21 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.lt.web.domain.Customer" table="CUSTOMER">
+        <id name="id" type="java.lang.String" access="field">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="firstName" type="java.lang.String" access="field">
+            <column name="FIRSTNAME" />
+        </property>
+        <property name="lastName" type="java.lang.String" access="field">
+            <column name="LASTNAME" />
+        </property>
+    </class>
+</hibernate-mapping>
