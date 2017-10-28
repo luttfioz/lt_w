@@ -8,18 +8,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Example;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.lt.web.domain.Customer;
-import com.lt.web.domain.CustomerRepository;
+import com.lt.web.MongoConfig;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@ContextConfiguration(classes = MongoConfig.class)
 public class CustomerRepositoryTests {
 
-    @Autowired
+	@Autowired
     CustomerRepository repository;
 
     Customer dave, oliver, carter;

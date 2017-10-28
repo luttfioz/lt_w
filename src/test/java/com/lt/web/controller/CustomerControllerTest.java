@@ -7,13 +7,16 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.lt.web.MongoConfig;
 import com.lt.web.domain.Customer;
 import com.lt.web.service.CustomerService;
 
 
 @RunWith(SpringRunner.class)
+@ContextConfiguration(classes = MongoConfig.class)
 public class CustomerControllerTest {
 
 	@Mock

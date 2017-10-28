@@ -1,19 +1,32 @@
 package com.lt.web;
 
-//@Configuration
-//@EnableMongoRepositories
-/*
-public class MongoConfig {
-    private static final String MONGO_DB_URL = "localhost";
-    private static final String MONGO_DB_NAME = "mydb";
-    
-    @Bean
-    public MongoTemplate mongoTemplate() throws IOException {
-        EmbeddedMongoFactoryBean mongo = new EmbeddedMongoFactoryBean();
-        mongo.setBindIp(MONGO_DB_URL);
-        MongoClient mongoClient = mongo.getObject();
-        MongoTemplate mongoTemplate = new MongoTemplate(mongoClient, MONGO_DB_NAME);
-        return mongoTemplate;
-    }
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+
+import com.github.fakemongo.Fongo;
+import com.mongodb.Mongo;
+
+@Configuration
+@EnableMongoRepositories(basePackages = "com.lt.web")
+public class MongoConfig extends AbstractMongoConfiguration {
+
+  private static final String DB_NAME = "test";
+
+  @Override
+  protected String getDatabaseName() {
+    return DB_NAME;
+  }
+
+  @Override
+  @Bean
+  public Mongo mongo() {
+    return new Fongo(getDatabaseName()).getMongo();
+  }
+
+  @Override
+  protected String getMappingBasePackage() {
+    return "com.lt.web";
+  }
 }
-*/
